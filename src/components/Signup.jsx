@@ -18,7 +18,7 @@ const Signup = () => {
                 // { withCredentials: true }
             );
             console.log(res.data);
-            navigate('/');
+            navigate('/login');
         } catch (err) {
             if (err.response) {
                 setError(err.response.data.message || "Signup failed");
@@ -32,42 +32,100 @@ const Signup = () => {
     };
 
     return (
-        <div style={{ maxWidth: '400px', margin: '50px auto' }}>
-            <h2>Signup</h2>
+        <div
+            style={{
+                maxWidth: '400px',
+                margin: '60px auto',
+                padding: '30px',
+                borderRadius: '12px',
+                background: '#ffffff',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+                fontFamily: 'Arial, sans-serif'
+            }}
+        >
+            <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Signup</h2>
+
             <form onSubmit={handleSubmit}>
                 <input
-                    name='name'
+                    name="name"
                     type="text"
                     placeholder="Name"
                     value={name}
-                    onChange={e => setName(e.target.value)}
+                    onChange={(e) => setName(e.target.value)}
                     required
-                    style={{ display: 'block', marginBottom: '10px', width: '100%', padding: '8px' }}
+                    style={{
+                        display: 'block',
+                        marginBottom: '12px',
+                        width: '100%',
+                        padding: '12px',
+                        borderRadius: '8px',
+                        border: '1px solid #ccc',
+                        fontSize: '15px'
+                    }}
                 />
 
                 <input
-                    name='email'
+                    name="email"
                     type="email"
-                    placeholder="email"
+                    placeholder="Email"
                     value={email}
-                    onChange={e => setemail(e.target.value)}
+                    onChange={(e) => setemail(e.target.value)}
                     required
-                    style={{ display: 'block', marginBottom: '10px', width: '100%', padding: '8px' }}
+                    style={{
+                        display: 'block',
+                        marginBottom: '12px',
+                        width: '100%',
+                        padding: '12px',
+                        borderRadius: '8px',
+                        border: '1px solid #ccc',
+                        fontSize: '15px'
+                    }}
                 />
+
                 <input
-                    name='Password'
+                    name="Password"
                     type="Password"
                     placeholder="Password"
                     value={Password}
-                    onChange={e => setPassword(e.target.value)}
+                    onChange={(e) => setPassword(e.target.value)}
                     required
-                    style={{ display: 'block', marginBottom: '10px', width: '100%', padding: '8px' }}
+                    style={{
+                        display: 'block',
+                        marginBottom: '12px',
+                        width: '100%',
+                        padding: '12px',
+                        borderRadius: '8px',
+                        border: '1px solid #ccc',
+                        fontSize: '15px'
+                    }}
                 />
-                <button type="submit" style={{ padding: '8px 16px' }}>Signup</button>
+
+                <button
+                    type="submit"
+                    style={{
+                        width: '100%',
+                        padding: '12px',
+                        background: '#4a6cf7',
+                        color: 'white',
+                        fontSize: '16px',
+                        fontWeight: 'bold',
+                        borderRadius: '8px',
+                        border: 'none',
+                        cursor: 'pointer',
+                        marginTop: '10px'
+                    }}
+                >
+                    Signup
+                </button>
             </form>
-            {error && <p style={{ color: 'red' }}>{error}</p>}
-            <p>Already have an account? <Link to="/">Login</Link></p>
+
+            {error && <p style={{ color: 'red', marginTop: '10px' }}>{error}</p>}
+
+            <p style={{ marginTop: '15px', textAlign: 'center' }}>
+                Already have an account? <Link to="/login">Login</Link>
+            </p>
         </div>
+
     );
 };
 
