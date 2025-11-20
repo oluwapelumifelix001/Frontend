@@ -12,7 +12,8 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('http://localhost:3000/user/login', { email, Password }, { withCredentials: true });
+            // const res = await axios.post('http://localhost:3000/user/login', { email, Password }, { withCredentials: true });
+            const res = await axios.post('https://backend-jsh5.onrender.com/user/login', { email, Password }, { withCredentials: true });
             console.log(res.data);
             localStorage.setItem("token", res.data.token);
             navigate('/dashboard');

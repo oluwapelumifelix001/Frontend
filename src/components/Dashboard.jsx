@@ -22,7 +22,6 @@ const Dashboard = () => {
                 }}
             >
                 <h2 style={{ margin: 0 }}>Dashboard</h2>
-
                 <button
                     onClick={logout}
                     style={{
@@ -45,8 +44,6 @@ const Dashboard = () => {
                 
             </div>
         </>
-
     )
 }
-
 export default Dashboard

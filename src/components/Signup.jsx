@@ -12,8 +12,13 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            // const res = await axios.post(
+            //     'http://localhost:3000/user/signup',
+            //     { name, email, Password },
+            //     // { withCredentials: true }
+            // );
             const res = await axios.post(
-                'http://localhost:3000/user/signup',
+                'https://backend-jsh5.onrender.com/user/signup',
                 { name, email, Password },
                 // { withCredentials: true }
             );
